@@ -1,5 +1,6 @@
 from pathlib import Path
 from config import *
+from config import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -9,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-dye3o3nn*k9o)j)^%zdq!ic*^@#hai8*5bz4c&ogakt2!u1x3j'
+SECRET_KEY = DJANGO_SECRET_KEY
 
 CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SECURE = False
