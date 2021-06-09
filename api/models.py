@@ -1,18 +1,17 @@
 from django.db.models import Model, TextField, CharField, ForeignKey, CASCADE
-
-
-class InstitutionType(Model):
-    name = TextField()
+from django.forms.models import model_to_dict
 
 
 class Institution(Model):
-    short_name = TextField()
-    full_name = TextField()
+    short_name = TextField(null=True)
+    full_name = TextField(null=False)
+    type = TextField(null=True)
+    director_name = TextField(null=True)
+    address = TextField(null=True)
+    phone_number = TextField(null=True)
+    site_url = TextField(null=True)
 
-    type = ForeignKey(InstitutionType, on_delete=CASCADE)
+    def to_dict(self):
+        institution_dict = model_to_dict(self)
 
-    director_name = TextField()
-    address = TextField()
-    phone_number = TextField()
-    site_url = TextField()
-
+        return institution_dict
