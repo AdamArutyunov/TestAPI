@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os
 import sys
+from time import sleep
 
 
 def main():
@@ -17,4 +18,5 @@ def main():
 
 
 if __name__ == '__main__':
+    sleep(1)
     main()

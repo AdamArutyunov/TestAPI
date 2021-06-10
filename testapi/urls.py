@@ -10,4 +10,5 @@ urlpatterns = [
     path('create', api.views.Create.as_view()),
     path('delete/<institution_id>', api.views.Delete.as_view()),
     path('update/<institution_id>', api.views.Update.as_view()),
+    path('', api.views.index)
 ]

@@ -5,6 +5,10 @@ from django.http import HttpResponse, JsonResponse, HttpResponseNotFound, HttpRe
 from api.models import *
 
 
+def index(request):
+    return HttpResponse("It works!")
+
+
 class GetAll(View):
     def get(self, request):
         institutions = Institution.objects.all()
