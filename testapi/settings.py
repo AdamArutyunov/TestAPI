@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from config import *
 from config import *
@@ -70,11 +71,11 @@ WSGI_APPLICATION = 'testapi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': POSTGRES_DB_NAME,
-        'USER': POSTGRES_USER,
-        'PASSWORD': POSTGRES_PASSWORD,
-        'HOST': POSTGRES_HOST,
-        'PORT': POSTGRES_PORT
+        'NAME': os.environ.get("SQL_DATABASE", POSTGRES_DB_NAME),
+        'USER': os.environ.get("SQL_USER", POSTGRES_USER),
+        'PASSWORD': os.environ.get("SQL_PASSWORD", POSTGRES_PASSWORD),
+        'HOST': os.environ.get("SQL_HOST", POSTGRES_HOST),
+        'PORT': os.environ.get("SQL_PORT", POSTGRES_PORT)
     }
 }
 
